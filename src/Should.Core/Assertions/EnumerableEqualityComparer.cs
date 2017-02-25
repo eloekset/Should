@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if NETSTANDARD1_6
+using System.Reflection;
+#endif
 
 namespace Should.Core.Assertions
 {
@@ -34,12 +37,20 @@ namespace Should.Core.Assertions
                     var xType = enumeratorX.Current.GetType();
                     var yType = enumeratorY.Current.GetType();
 
+#if NETSTANDARD1_6
+                    if (xType.GetTypeInfo().IsAssignableFrom(yType.GetTypeInfo()))
+#else
                     if (xType.IsAssignableFrom(yType))
+#endif
                     {
                         if (!Equals(enumeratorX.Current, enumeratorY.Current, xType))
                             return false;
                     }
+#if NETSTANDARD1_6
+                    else if (yType.GetTypeInfo().IsAssignableFrom(xType.GetTypeInfo()))
+#else
                     else if (yType.IsAssignableFrom(xType))
+#endif
                     {
                         if (!Equals(enumeratorY.Current, enumeratorX.Current, yType))
                             return false;
@@ -62,7 +73,11 @@ namespace Should.Core.Assertions
         {
             var assertComparerType = typeof(AssertEqualityComparer<>).MakeGenericType(baseType);
             var assertComparer = Activator.CreateInstance(assertComparerType);
-            var compareMethod = assertComparerType.GetMethod("Equals", new [] { baseType, baseType });
+#if NETSTANDARD1_6
+            var compareMethod = assertComparerType.GetTypeInfo().GetMethod("Equals", new[] { baseType, baseType });
+#else
+            var compareMethod = assertComparerType.GetMethod("Equals", new[] { baseType, baseType });
+#endif
             return (bool)compareMethod.Invoke(assertComparer, new[] { a, b });
         }
     }

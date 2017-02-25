@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Configuration">
+    <AssemblyName>Should.Fluent</AssemblyName>
+    <RootNamespace>Should</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Should.Fluent\BeBoolExtensions.cs" Link="BeBoolExtensions.cs" />
+    <Compile Include="..\Should.Fluent\BeCollectionExtensions.cs" Link="BeCollectionExtensions.cs" />
+    <Compile Include="..\Should.Fluent\BeDateTimeExtensions.cs" Link="BeDateTimeExtensions.cs" />
+    <Compile Include="..\Should.Fluent\BeDoubleExtensions.cs" Link="BeDoubleExtensions.cs" />
+    <Compile Include="..\Should.Fluent\BeEnumerableExtensions.cs" Link="BeEnumerableExtensions.cs" />
+    <Compile Include="..\Should.Fluent\BeGuidExtensions.cs" Link="BeGuidExtensions.cs" />
+    <Compile Include="..\Should.Fluent\BeNullableBoolExtensions.cs" Link="BeNullableBoolExtensions.cs" />
+    <Compile Include="..\Should.Fluent\BeNullableDateTimeExtensions.cs" Link="BeNullableDateTimeExtensions.cs" />
+    <Compile Include="..\Should.Fluent\BeStringExtensions.cs" Link="BeStringExtensions.cs" />
+    <Compile Include="..\Should.Fluent\IAssertProvider.cs" Link="IAssertProvider.cs" />
+    <Compile Include="..\Should.Fluent\Model\Be.cs" Link="Model\Be.cs" />
+    <Compile Include="..\Should.Fluent\Model\BeBase.cs" Link="Model\BeBase.cs" />
+    <Compile Include="..\Should.Fluent\Model\BeMethodCallExpression.cs" Link="Model\BeMethodCallExpression.cs" />
+    <Compile Include="..\Should.Fluent\Model\Check.cs" Link="Model\Check.cs" />
+    <Compile Include="..\Should.Fluent\Model\Contain.cs" Link="Model\Contain.cs" />
+    <Compile Include="..\Should.Fluent\Model\ContainQueryable.cs" Link="Model\ContainQueryable.cs" />
+    <Compile Include="..\Should.Fluent\Model\Count.cs" Link="Model\Count.cs" />
+    <Compile Include="..\Should.Fluent\Model\IBe.cs" Link="Model\IBe.cs" />
+    <Compile Include="..\Should.Fluent\Model\IShould.cs" Link="Model\IShould.cs" />
+    <Compile Include="..\Should.Fluent\Model\Should.cs" Link="Model\Should.cs" />
+    <Compile Include="..\Should.Fluent\Model\ShouldBase.cs" Link="Model\ShouldBase.cs" />
+    <Compile Include="..\Should.Fluent\Model\ShouldCollection.cs" Link="Model\ShouldCollection.cs" />
+    <Compile Include="..\Should.Fluent\Model\ShouldDictionary.cs" Link="Model\ShouldDictionary.cs" />
+    <Compile Include="..\Should.Fluent\Model\ShouldEnumerable.cs" Link="Model\ShouldEnumerable.cs" />
+    <Compile Include="..\Should.Fluent\ShouldCoreAssertProvider.cs" Link="ShouldCoreAssertProvider.cs" />
+    <Compile Include="..\Should.Fluent\ShouldDateTimeExtensions.cs" Link="ShouldDateTimeExtensions.cs" />
+    <Compile Include="..\Should.Fluent\ShouldDoubleExtensions.cs" Link="ShouldDoubleExtensions.cs" />
+    <Compile Include="..\Should.Fluent\ShouldExtensions.cs" Link="ShouldExtensions.cs" />
+    <Compile Include="..\Should.Fluent\ShouldStringExtensions.cs" Link="ShouldStringExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Should.Core-DotNetCore\Should.Core-DotNetCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+
+</Project>

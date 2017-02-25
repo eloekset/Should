@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Should.Core.Exceptions;
+#if NETSTANDARD1_6
+using System.Reflection;
+#endif
 
 namespace Should.Core.Assertions
 {
@@ -484,7 +487,11 @@ namespace Should.Core.Assertions
         /// <exception cref="IsAssignableFromException">Thrown when the object is not the given type</exception>
         public static void IsAssignableFrom(Type expectedType, object @object)
         {
+#if NETSTANDARD1_6
+            if (@object == null || !expectedType.GetTypeInfo().IsAssignableFrom(@object.GetType().GetTypeInfo()))
+#else
             if (@object == null || !expectedType.IsAssignableFrom(@object.GetType()))
+#endif
                 throw new IsAssignableFromException(expectedType, @object);
         }
 
@@ -511,7 +518,11 @@ namespace Should.Core.Assertions
         /// <exception cref="IsAssignableFromException">Thrown when the object is not the given type</exception>
         public static void IsAssignableFrom(Type expectedType, object @object, string userMessage)
         {
+#if NETSTANDARD1_6
+            if (@object == null || !expectedType.GetTypeInfo().IsAssignableFrom(@object.GetType()))
+#else
             if (@object == null || !expectedType.IsAssignableFrom(@object.GetType()))
+#endif
                 throw new IsAssignableFromException(expectedType, @object, userMessage);
         }
 

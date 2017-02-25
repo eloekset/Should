@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+
+  <PropertyGroup Label="Configuration">
+    <AssemblyName>Should</AssemblyName>
+    <RootNamespace>Should</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\should\ActionAssertionExtensions.cs" Link="ActionAssertionExtensions.cs" />
+    <Compile Include="..\should\BooleanAssertionExtensions.cs" Link="BooleanAssertionExtensions.cs" />
+    <Compile Include="..\should\CollectionAssertionExtensions.cs" Link="CollectionAssertionExtensions.cs" />
+    <Compile Include="..\should\DateAssertionExtensions.cs" Link="DateAssertionExtensions.cs" />
+    <Compile Include="..\should\DoubleAssertionExtensions.cs" Link="DoubleAssertionExtensions.cs" />
+    <Compile Include="..\should\ObjectAssertExtensions.cs" Link="ObjectAssertExtensions.cs" />
+    <Compile Include="..\should\StringAssertionExtensions.cs" Link="StringAssertionExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Should.Core-DotNetCore\Should.Core-DotNetCore.csproj" />
+  </ItemGroup>
+
+</Project>

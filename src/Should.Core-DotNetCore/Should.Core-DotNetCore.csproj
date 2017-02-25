@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+
+  <PropertyGroup Label="Configuration">
+    <AssemblyName>Should.Core</AssemblyName>
+    <RootNamespace>Should.Core</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Should.Core\Assertions\Assert.cs" Link="Assertions\Assert.cs" />
+    <Compile Include="..\Should.Core\Assertions\AssertComparer.cs" Link="Assertions\AssertComparer.cs" />
+    <Compile Include="..\Should.Core\Assertions\AssertEqualityComparer.cs" Link="Assertions\AssertEqualityComparer.cs" />
+    <Compile Include="..\Should.Core\Assertions\Assertions.cs" Link="Assertions\Assertions.cs" />
+    <Compile Include="..\Should.Core\Assertions\EnumerableEqualityComparer.cs" Link="Assertions\EnumerableEqualityComparer.cs" />
+    <Compile Include="..\Should.Core\Assertions\Record.cs" Link="Assertions\Record.cs" />
+    <Compile Include="..\Should.Core\DatePrecision.cs" Link="DatePrecision.cs" />
+    <Compile Include="..\Should.Core\Exceptions\AssertActualExpectedException.cs" Link="Exceptions\AssertActualExpectedException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\AssertException.cs" Link="Exceptions\AssertException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\ComparisonException.cs" Link="Exceptions\ComparisonException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\ContainsException.cs" Link="Exceptions\ContainsException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\DoesNotContainException.cs" Link="Exceptions\DoesNotContainException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\DoesNotThrowException.cs" Link="Exceptions\DoesNotThrowException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\EmptyException.cs" Link="Exceptions\EmptyException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\EqualException.cs" Link="Exceptions\EqualException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\FalseException.cs" Link="Exceptions\FalseException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\GreaterThanException.cs" Link="Exceptions\GreaterThanException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\GreaterThanOrEqualException.cs" Link="Exceptions\GreaterThanOrEqualException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\InRangeException.cs" Link="Exceptions\InRangeException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\IsAssignableFromException.cs" Link="Exceptions\IsAssignableFromException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\IsNotTypeException.cs" Link="Exceptions\IsNotTypeException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\IsTypeException.cs" Link="Exceptions\IsTypeException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\LessThanException.cs" Link="Exceptions\LessThanException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\LessThanOrEqualException.cs" Link="Exceptions\LessThanOrEqualException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\NotEmptyException.cs" Link="Exceptions\NotEmptyException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\NotEqualException.cs" Link="Exceptions\NotEqualException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\NotInRangeException.cs" Link="Exceptions\NotInRangeException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\NotNullException.cs" Link="Exceptions\NotNullException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\NotSameException.cs" Link="Exceptions\NotSameException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\NullException.cs" Link="Exceptions\NullException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\ParameterCountMismatchException.cs" Link="Exceptions\ParameterCountMismatchException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\SameException.cs" Link="Exceptions\SameException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\SingleException.cs" Link="Exceptions\SingleException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\StartsWithException.cs" Link="Exceptions\StartsWithException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\ThrowsException.cs" Link="Exceptions\ThrowsException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\TimeoutException.cs" Link="Exceptions\TimeoutException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\TraceAssertException.cs" Link="Exceptions\TraceAssertException.cs" />
+    <Compile Include="..\Should.Core\Exceptions\TrueException.cs" Link="Exceptions\TrueException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assertions\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+
+</Project>
