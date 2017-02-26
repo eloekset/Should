@@ -19,7 +19,9 @@
 	<property name="nant.settings.currentframework" value="net-3.5" />
 	<property name="framework" value="${framework::get-framework-directory(framework::get-target-framework())}" />
 	<property name="msbuild" value="${framework}\msbuild.exe" />
+	<property name="dotnetcli" value="dotnet" />
 	<property name="file.solution" value="${dir.solution}\${project::get-name()}.sln"/>
+	<property name="file.dotnetcore.solution" value="${dir.solution}\${project::get-name()}.DotNetCore.sln"/>
 	
 	<patternset id="test-files">
         <include name="**\*"/>
@@ -61,6 +63,12 @@
 			  commandline="${file.solution} /t:Clean /p:Configuration=${project.config} /v:q" workingdir="." />
 		<exec program="${msbuild}"
 			  commandline="${file.solution} /t:Rebuild /p:Configuration=${project.config} /v:q" workingdir="." />
+
+		<echo>Compiling ${file.dotnetcore.solution}</echo>
+		<exec program="${dotnetcli}"
+			  commandline="clean -c ${project.config} ${file.dotnetcore.solution}" workingdir="." />
+		<exec program="${dotnetcli}"
+			  commandline="build -c ${project.config} ${file.dotnetcore.solution}" workingdir="." />
     </target>
 
 	<target name="prepare-for-output" depends="compile">
@@ -125,6 +133,14 @@
 -->
 	</target>
 	
+	<target name="create-packages">
+		<property name="current.nuspec.name" value="Should"/>
+		<call target="create-package"/>
+		
+		<property name="current.nuspec.name" value="ShouldFluent"/>
+		<call target="create-package"/>
+	</target>
+
 	<target name="create-package">
 		<property name="file.nuspec" value="${dir.root}\${current.nuspec.name}.nuspec"/>
 		
@@ -132,10 +148,10 @@
 				 xpath="/package/metadata/version"
 				 value="${version.full}" />
 	
-		<exec program="NuPack.exe" 
+		<exec program="nuget.exe" 
               basedir="${dir.tools}" 
               workingdir="${dir.publish}"
-              commandline="&quot;${file.nuspec}&quot;"
+              commandline="pack &quot;${file.nuspec}&quot;"
               resultproperty="exit-code"/>	
 	</target>
 
