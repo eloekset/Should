@@ -6,8 +6,9 @@
     <description>The Should Assertion Library provides a set of extension methods for test assertions for AAA and BDD style tests. It provides assertions only, and as a result it is test runner agnostic.  The assertions are a direct fork of the xUnit test assertions.  This project was born because test runners Should be independent of the assertions!</description>
     <language>en-US</language>
   </metadata>
-	<files>
-	<file src="output\publish\Should.Fluent.dll" target="lib"/>
+  <files>
+    <file src="output\publish\Should.Fluent.dll" target="lib\net35\Should.Fluent.dll" />
+    <file src="src\Should.Fluent-DotNetCore\bin\Release\netstandard1.6\Should.Core.dll" target="lib\netstandard1.6\Should.Core.dll" />
+    <file src="src\Should.Fluent-DotNetCore\bin\Release\netstandard1.6\Should.Fluent.dll" target="lib\netstandard1.6\Should.Fluent.dll" />
   </files>
-
 </package>

@@ -8,8 +8,9 @@
     <projectUrl>https://github.com/erichexter/Should/blob/master/README.markdown</projectUrl>
     <licenseUrl>https://github.com/erichexter/Should/blob/master/license.txt</licenseUrl>
   </metadata>
-	<files>
-	<file src="output\publish\Should.dll" target="lib"/>
+  <files>
+    <file src="output\publish\Should.dll" target="lib\net35\Should.dll" />
+    <file src="src\Should-DotNetCore\bin\Release\netstandard1.6\Should.dll" target="lib\netstandard1.6\Should.dll" />
+    <file src="src\Should-DotNetCore\bin\Release\netstandard1.6\Should.Core.dll" target="lib\netstandard1.6\Should.Core.dll" />
   </files>
-
 </package>
