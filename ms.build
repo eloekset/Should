@@ -52,8 +52,8 @@
   </Target>
 
   <Target Name="Pack">
-    <exec Command="tools\nuget.exe pack Should.nuspec -Version $(Version)"/>
-    <exec Command="tools\nuget.exe pack ShouldFluent.nuspec -Version $(Version)"/>
+    <exec Command="tools\nuget.exe pack Should.nuspec -Version $(PackageVersion)"/>
+    <exec Command="tools\nuget.exe pack ShouldFluent.nuspec -Version $(PackageVersion)"/>
   </Target>
 
   <Target Name="build" DependsOnTargets="AssemblyVersion;Compile;Test;Pack"/>

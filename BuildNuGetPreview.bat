@@ -1,0 +1,1 @@
+msbuild ms.build /property:Version=2.0.0.0 /property:PackageVersion=2.0.0-preview-%1-%2

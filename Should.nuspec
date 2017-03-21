@@ -15,6 +15,7 @@
                 <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
             </group>
         </dependencies>
+        <releaseNotes>Unofficial package that supports .NET Standard 1.6. Functionality should align with the official 1.1.20 package but this preview is not well tested.</releaseNotes>
     </metadata>
     <files>
         <file src="src\Should-net35\bin\Release\Should.dll" target="lib\net35\Should.dll" />

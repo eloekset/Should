@@ -7,6 +7,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup>
+    <VersionPrefix>2.0.0.0</VersionPrefix>
+  </PropertyGroup>
 
   <Import Project="..\Should.Core\Should.Core.Shared.projitems" Label="Shared" />
 
@@ -15,5 +18,4 @@
   <ItemGroup>
     <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
   </ItemGroup>
-
 </Project>
